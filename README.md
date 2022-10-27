@@ -1,0 +1,1 @@
+A bunch of unity games I am making just to try things out. Aiming to just get familiar with the game engine as well as writing scripts in C#. Will primarly making 2D games and hopefully will create something more fleshed out in the future.
