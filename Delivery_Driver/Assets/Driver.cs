@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
+    // SerializeField allows you to change the value of a variable within the unity editor interface
+    [SerializeField] float steerSpeed = 1f;
+    [SerializeField] float moveSpeed = 0.01f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +21,9 @@ public class Driver : MonoBehaviour
         // use unity's build in transform.rotate() method to handle this
         // rotate takes 3 params, how much the x, y, and z axis are changing
         // need to include the f at the end so that unity knows that 0.1 is a float value
-        transform.Rotate(0, 0, 0.1f);        
+        transform.Rotate(0, 0, steerSpeed); 
+
+        // transform also has a translate method, same idea. 
+        transform.Translate(0, moveSpeed, 0);
     }
 }
