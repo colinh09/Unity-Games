@@ -11,7 +11,6 @@ public class Delivery : MonoBehaviour
     [SerializeField] Color32 noPackageColor = new Color32(1, 1, 1, 1);
 
     SpriteRenderer spriteRenderer;
-
     private void Start(){
         // getting a component in the start method and storing it in a variable of type spriterenderer
         // now we can use the . operator to access the spriterender's property

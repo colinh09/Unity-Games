@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Package
   - Customer
+  - speedBost
+  - speedBoost
   layers:
   - Default
   - TransparentFX

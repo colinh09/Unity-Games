@@ -6,13 +6,10 @@ public class Driver : MonoBehaviour
 {
     // SerializeField allows you to change the value of a variable within the unity editor interface
     [SerializeField] float steerSpeed = 50f;
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float moveSpeed = 10f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    [SerializeField] float slowSpeed = 10f;
+    [SerializeField] float boostSpeed = 20f;
 
     // Update is called once per frame
     void Update()
@@ -34,4 +31,16 @@ public class Driver : MonoBehaviour
         // transform also has a translate method, same idea. 
         transform.Translate(0, moveAmount, 0);
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        moveSpeed = slowSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "speedBoost"){
+            moveSpeed = boostSpeed;
+        }
+    }
+
 }
+
