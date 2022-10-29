@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class Delivery : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other) {
         Debug.Log("Warning: You have collided into something!");
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Passed over speed boost!");
+        if (other.tag == "Package"){
+            Debug.Log("Package picked up");
+        } 
+        
+        if (other.tag == "Customer"){
+            Debug.Log("Delivered Package.");
+        }
     }
 }
