@@ -371,9 +371,10 @@ GameObject:
   - component: {fileID: 1487789714}
   - component: {fileID: 1487789717}
   - component: {fileID: 1487789718}
+  - component: {fileID: 1487789719}
   m_Layer: 0
   m_Name: Level Sprite Shape
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1044,6 +1045,18 @@ SurfaceEffector2D:
   m_UseContactForce: 0
   m_UseFriction: 1
   m_UseBounce: 1
+--- !u!114 &1487789719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487789713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193ea68e4ffcd4f44bce9d6208d93861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1527924144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,9 +1069,10 @@ GameObject:
   - component: {fileID: 1527924145}
   - component: {fileID: 1527924149}
   - component: {fileID: 1527924150}
+  - component: {fileID: 1527924151}
   m_Layer: 0
   m_Name: Snowboarder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1130,6 +1144,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torqueAmount: 1
+--- !u!114 &1527924151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527924144}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193ea68e4ffcd4f44bce9d6208d93861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1541540892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1339,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 14.06}
@@ -1370,7 +1396,7 @@ GameObject:
   - component: {fileID: 1783230971}
   m_Layer: 0
   m_Name: Boarder_Top
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
