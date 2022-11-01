@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float boostSpeed = 100f;
     [SerializeField] float baseSpeed = 15f;
     SurfaceEffector2D surfaceEffector2D;
+    bool canMove = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,16 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){   
-        RotatePlayer();
-        RespondToBoost();
+    void Update(){  
+        if (canMove){ 
+            RotatePlayer();
+            RespondToBoost();
+        }
     }
 
+    public void DisableControls(){
+        canMove = false;
+    }
 
     void RespondToBoost(){
         // if we push up, speed up, otherwise stay at normal speed
