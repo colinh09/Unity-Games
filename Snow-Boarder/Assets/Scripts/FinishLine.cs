@@ -12,6 +12,7 @@ public class FinishLine : MonoBehaviour
             finishEffect.Play();
             // delay the reloading of the scene after winning the game
             Invoke("ReloadScene", delayTimer);
+            GetComponent<AudioSource>().Play();
         }
     }
 

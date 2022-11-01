@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        // this lets us access the surface effector that is in the level sprite
         surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
     }
 
