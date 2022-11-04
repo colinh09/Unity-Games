@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question4
   m_EditorClassIdentifier: 
   question: What is Colin's dream job?
+  answers:
+  - Software Engineer
+  - 'Unemployed '
+  - Game Developer
+  - Content Creator
+  correctIndex: 2

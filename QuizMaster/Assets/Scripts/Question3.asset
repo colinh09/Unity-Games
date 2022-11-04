@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question3
   m_EditorClassIdentifier: 
   question: What profession does Colin label himself with?
+  answers:
+  - Software Engineer
+  - Game Developer
+  - Electrical Engineer
+  - Construction Manager
+  correctIndex: 0

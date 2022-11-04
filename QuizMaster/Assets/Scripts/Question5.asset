@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51942ab7af0556b4e9461ef1176448c7, type: 3}
   m_Name: Question5
   m_EditorClassIdentifier: 
-  question: Which one of these choices best describes Colin?
+  question: Colin has some free time! What does he choose to spend it on?
+  answers:
+  - Going outside and getting some fresh air
+  - Hanging out with friends
+  - Getting some exercise
+  - Stay inside all day and do nothing
+  correctIndex: 3

@@ -10,7 +10,8 @@ public class Quiz : MonoBehaviour
     [Header("Questions")]
     // UI based text
     [SerializeField] TextMeshProUGUI questionText;
-    [SerializeField] QuestionSO question;
+    [SerializeField] List<QuestionSO> questionList = new List<QuestionSO>();
+    QuestionSO question;
 
     [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
@@ -27,7 +28,6 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
-        getNextQuestion();
         timer = FindObjectOfType<Timer>();
     }
 
@@ -45,9 +45,19 @@ public class Quiz : MonoBehaviour
     }
 
     private void getNextQuestion(){
-        SetButtonState(true);
-        SetDefaultButtonSprites();
-        DisplayQuestion();
+        if (questionList.Count > 0)
+            SetButtonState(true);
+            SetDefaultButtonSprites();
+            GetRandomQuestion();
+            DisplayQuestion();
+    }
+
+    private void GetRandomQuestion(){
+        int index = Random.Range(0, questionList.Count);
+        question = questionList[index];
+        if (questionList.Contains(question)){
+            questionList.Remove(question);
+        }
     }
 
     private void DisplayQuestion(){
