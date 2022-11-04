@@ -8,7 +8,7 @@ public class QuestionSO : ScriptableObject
     // adjust text area of of the variables seen in the inspector. 2 params, min and max lines.
     [TextArea(2, 6)]    
     [SerializeField] string question = "Enter new question text here";
-    [SerializeField] string[] answers = new string[5];
+    [SerializeField] string[] answers = new string[4];
     [SerializeField] int correctIndex;
 
     public string GetQuestion(){

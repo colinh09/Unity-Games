@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question1
   m_EditorClassIdentifier: 
   question: What is Colin's favorite color?
+  answers:
+  - Green
+  - Gray
+  - Blue
+  - Black
+  correctIndex: 0
