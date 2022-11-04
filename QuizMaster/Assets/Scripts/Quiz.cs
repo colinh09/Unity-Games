@@ -6,17 +6,42 @@ using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour
 {
+    // using header to break up variables for better readability in inspector
+    [Header("Questions")]
     // UI based text
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionSO question;
+
+    [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
     int correctIndex;
+    bool answeredEarly;
+
+    [Header("Button Colors")]
     [SerializeField] Sprite defaultAnswerSprite;
+
+    [Header("Timer")]
     [SerializeField] Sprite correctAnswerSprite;
+    [SerializeField] Image timerImage;
+    Timer timer;
 
     void Start()
     {
         getNextQuestion();
+        timer = FindObjectOfType<Timer>();
+    }
+
+    void Update(){
+        timerImage.fillAmount = timer.fillFraction;
+        if (timer.loadNextQuestion){
+            answeredEarly = false;
+            getNextQuestion();
+            timer.loadNextQuestion = false;
+        }
+        else if (!answeredEarly && !timer.isAnswering){
+            displayAnswer(-1);
+            SetButtonState(false);
+        }
     }
 
     private void getNextQuestion(){
@@ -42,7 +67,7 @@ public class Quiz : MonoBehaviour
         }
     }
 
-    public void OnAnswerSelected(int index){
+    public void displayAnswer(int index){
         // match index of answer chosen with the correct answer. If correct, output text and change
         // current image of the button to a correct answer sprite
         if (index == question.GetCorrectIndex()){
@@ -54,8 +79,14 @@ public class Quiz : MonoBehaviour
             questionText.text = "Incorrect. The correct answer was " + question.GetAnswer(correctIndex);
             Image buttonImage = answerButtons[correctIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;                        
-        }
+        }        
+    }
+
+    public void OnAnswerSelected(int index){
+        answeredEarly = true;
+        displayAnswer(index);
         SetButtonState(false);
+        timer.CancelTimer();
     }
 
     private void SetDefaultButtonSprites(){
