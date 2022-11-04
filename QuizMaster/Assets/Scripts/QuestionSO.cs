@@ -10,7 +10,7 @@ public class QuestionSO : ScriptableObject
     [SerializeField] string question = "Enter new question text here";
     [SerializeField] string[] answers = new string[4];
     [SerializeField] int correctIndex;
-
+    // getter functions to get question, correct index, and answer text in other scripts
     public string GetQuestion(){
         return question;
     }
