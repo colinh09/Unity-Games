@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14862,11 +14862,11 @@ Tilemap:
       e01: 0
       e02: 0
       e03: 0
-      e10: 0
+      e10: -0
       e11: 1
       e12: 0
       e13: 0
-      e20: 0
+      e20: -0
       e21: 0
       e22: 1
       e23: 0
@@ -15072,32 +15072,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!1 &2003242520 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6844645426298428332, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
-  m_PrefabInstance: {fileID: 6844645426690397620}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &2003242524
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003242520}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &6844645426690397620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15115,11 +15089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6844645426298428335, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.36
+      value: -2.34
       objectReference: {fileID: 0}
     - target: {fileID: 6844645426298428335, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.37
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 6844645426298428335, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15152,6 +15126,10 @@ PrefabInstance:
     - target: {fileID: 6844645426298428335, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844645426690397622, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
