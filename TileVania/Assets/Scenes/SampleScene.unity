@@ -12976,7 +12976,7 @@ GameObject:
   - component: {fileID: 1345324970}
   - component: {fileID: 1345324969}
   - component: {fileID: 1345324968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform Titlemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15079,6 +15079,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 774740624288393397, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
+      propertyPath: jumpSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557669230726456139, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
+      propertyPath: m_GravityScale
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557669230726456139, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6844645426298428332, guid: 62f8f047d262ccc4a8d28285f3159b49, type: 3}
       propertyPath: m_Name
       value: Player
