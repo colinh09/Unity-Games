@@ -13,10 +13,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
+    SpriteRenderer mySpriteRenderer;
     float gravityStart;
+    float dyingVelocity = 5f;
+    bool isAlive = true;
 
     void Start()
     {
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
@@ -26,17 +30,27 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive){
+            return;
+        }
         Run();
         FlipSprite();
         ClimbLadder();
+        Die();
     }
 
     // the "on something" functions come from the input system
     private void OnMove(InputValue value){
+        if (!isAlive){
+            return;
+        }
         moveInput = value.Get<Vector2>();
     }
 
     private void OnJump(InputValue value){
+        if (!isAlive){
+            return;
+        }
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
             return;
         }
@@ -75,6 +89,15 @@ public class PlayerMovement : MonoBehaviour
             myAnimator.SetBool("isClimbing", true);
         } else {
             myAnimator.SetBool("isClimbing", false);            
+        }
+    }
+
+    private void Die(){
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies"))){
+            isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            mySpriteRenderer.color = Color.red;
+            myRigidBody.velocity += new Vector2 (dyingVelocity, dyingVelocity);
         }
     }
 }
