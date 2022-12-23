@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         ClimbLadder();
     }
 
+    // the "on something" functions come from the input system
     private void OnMove(InputValue value){
         moveInput = value.Get<Vector2>();
     }
