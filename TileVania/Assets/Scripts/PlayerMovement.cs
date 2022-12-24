@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     float gravityStart;
     float dyingVelocity = 5f;
     bool isAlive = true;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
 
     void Start()
     {
@@ -45,6 +47,13 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         moveInput = value.Get<Vector2>();
+    }
+
+    private void OnFire(InputValue value){
+        if (!isAlive){
+            return;
+        }
+        Instantiate(bullet, gun.position, transform.rotation);
     }
 
     private void OnJump(InputValue value){
@@ -93,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Die(){
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies"))){
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards"))){
             isAlive = false;
             myAnimator.SetTrigger("Dying");
             mySpriteRenderer.color = Color.red;
